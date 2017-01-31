@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+var $articlesContainer= $('#articlesContainer');
     // complete the following function
     function getArticles(searchTerm) {
         $.ajax({
@@ -17,9 +17,10 @@ $(document).ready(function() {
                 //     var article = articleMaker(title, snippet);
                 //     $('#articlesContainer').append(article);
                 // };
+                $articlesContainer.html('');
 
                 response.query.search.forEach(function(article) {
-                    $('#articlesContainer').append(articleMaker(article.title, article.snippet));
+                    $articlesContainer.append(articleMaker(article.title, article.snippet));
                 });
 
                 // use the articleMaker function somewhere in here and then
